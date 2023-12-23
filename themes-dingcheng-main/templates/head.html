@@ -1,0 +1,54 @@
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" th:with="posts = ${postFinder.listByTag(1,100,'tag-dfoHF')}">
+      <div class="carousel-item active">
+        <img th:src="@{/assets/images/about.png}" class="d-block w-100" alt="...">
+        <div class="carousel-caption top-50 start-33 translate-middle d-none d-md-block">
+          <div class="d-flex flex-column align-items-start">
+            </br></br></br></br></br></br></br></br></br>
+            <a href="#" class="btn btn-primary">MORE</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" th:each="post : ${posts.items}">
+        <img th:src="${post.spec.cover}" class="d-block w-100" alt="..."> 
+        <div class="carousel-caption top-50 start-33 translate-middle d-none d-md-block">
+          <div class="d-flex flex-column align-items-start">
+            </br></br></br></br></br></br></br></br></br>
+            <a href="#" class="btn btn-primary">MORE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="position-relative">
+    <img th:src="@{/assets/images/about.png}" class="img-fluid" alt="描述性文字">
+    <div class="position-absolute top-50 start-33 translate-middle">
+      <!-- <h1 class="text-dark">关于我们</h1>
+      <h3 class="text-dark mt-2">这是副标题</h3>
+      <p class="text-dark mt-2">这里是正文内容，你可以在这里添加更多的内容。</p> -->
+      </br></br></br></br></br></br></br></br></br>
+      <div class="d-flex mt-2">
+        <a href="#" class="btn btn-outline-primary">MORE</a>
+      </div>
+    </div>
+  </div>

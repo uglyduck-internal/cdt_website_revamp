@@ -1,0 +1,18 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-dingchen-main
+spec:
+  displayName: 鼎宸武汉
+  author:
+    name: 武汉诚捷
+    website: "https://luckyiwing.github.io"
+  description: 鼎宸科技门户网站
+  logo: "https://wuhandingchen.com/logo"
+  website: "https://wuhandingchen.com/"
+  repo: "https://github.com/halo-sigs/theme-starter"
+  settingName: "theme-dingchen-setting"
+  configMapName: "theme-dingchen-configMap"
+  version: "1.0"
+  require: "*"
+

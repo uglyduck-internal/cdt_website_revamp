@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Alibaba PuHuiTi Bold';
+  src: url('../font/AlibabaPuHuiTi-2-85-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Alibaba PuHuiTi Bold', sans-serif;
+}
+
+.start-33 {
+  left: 33.33% !important;  /* In LTR reading modes (like English) */
+  right: 33.33% !important; /* In RTL reading modes (like Arabic) */
+}
+
+.product-panel {
+  height: 340px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;  /* 保持垂直堆叠 */
+  align-items: center;  /* 水平居中内容 */
+  justify-content: center;  /* 垂直居中内容 */
+}
+
+.product-panel img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;  /* 添加间距以分隔图像和文字 */
+}
+
+.product-name {
+  text-align: center;  /* 文字水平居中 */
+  width: 100%;  /* 文字区域宽度为100% */
+}
+
+.position-absolute {
+  left: calc(100% / 3);
+}
+
+.custom-bg {
+  background-image: url('../assets/images/bl.png');
+  background-size: contain;
+  background-position: bottom;
+  background-attachment: fixed; /* 让背景图固定在视口中 */
+  background-repeat: no-repeat; /* 确保背景图只出现一次 */
+}
