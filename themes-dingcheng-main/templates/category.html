@@ -5,27 +5,30 @@
 >
   <th:block th:fragment="content">
     <div class="position-relative">
-      <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="描述性文字">
+      <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="">
       <div class="position-absolute bottom-0 start-33 translate-middle">
         <h1 class="text-dark" th:text="${category.spec.displayName}"></h1>
-        <h1 class="text-dark" th:text="${category.metadata.name}"></h1>
+
       </div>
     </div>
     <div class="row">
       <div class="col-md-1">
       </div>
       <div class="col-md-3">
-        <ul th:with="categories = ${categoryFinder.list(1,2)}">
+        <!-- <ul th:with="categories = ${categoryFinder.list(1,10)}">
           <li th:each="category : ${categories.items}">
             <a th:href="@{${category.status.permalink}}" th:text="${category.spec.displayName}"></a><span th:text="${category.metadata.name}"></span>
           </li>
-        </ul>
-        <!-- <div th:with="categories = ${categoryFinder.getByNames(['category-jXOzB','category-hiwdQ'])}">
-          <a th:each="category : ${categories.items}" th:href="@{${category.status.permalink}}" th:text="${category.spec.displayName}"></a>
-        </div> -->
+        </ul> -->
+
+        <div th:with="categoryNames=${#strings.arraySplit('category-TpdvY,category-jXOzB,category-hiwdQ',',')}">
+          <div th:each="category1 : ${categoryFinder.getByNames(categoryNames)}">
+            <a class="btn btn-lg btn-info btn-block m-1" type="button" th:href="@{${category1.status.permalink}}" th:text="${category1.spec.displayName}"></a>
+          </div>
+        </div>
       </div>
       <div class="col-md-7">
-        <div class="row" th:with="posts = ${postFinder.list(1,8)}" >
+        <div class="row" th:with="posts = ${postFinder.list(1,8)}">
           <div class="col-md-6" th:each="post : ${posts.items}">
             <div class="card">
               <img class="card-img-top"  style="height: 300px;" alt="" th:src="${post.spec.cover}"  />
@@ -47,16 +50,10 @@
       <div class="col-md-1">
       </div>
     </div>
-    <!-- <ul>
-      <li th:each="post : ${posts.items}">
-        <a
-          th:href="@{${post.status.permalink}}"
-          th:text="${post.spec.title}"
-        ></a>
-      </li>
-    </ul> -->
-  
-    <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
-    <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
+    <div class="row">
+      <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
+      <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
+    </div>
+
   </th:block>
 </html>
