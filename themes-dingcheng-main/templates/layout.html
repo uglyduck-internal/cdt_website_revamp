@@ -31,5 +31,14 @@
         <th:block th:replace="~{feet}" />
       </footer>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('.text-muted');
+        elements.forEach(function(element) {
+          var date = new Date(element.textContent);
+          element.textContent = date.toISOString().split('T')[0];
+        });
+      });
+    </script>
   </body>
 </html>

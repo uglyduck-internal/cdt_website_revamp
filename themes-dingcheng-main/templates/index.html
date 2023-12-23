@@ -13,52 +13,28 @@
 
     <div class="row">
         <!-- 左侧大图 改：自动获取最近发布的一条新闻-->
-        <div class="col-lg-6 mb-4">
-            <div class="position-relative">
+        <div class="col-lg-6 mb-4" th:with="posts = ${postFinder.listByCategory(1,1,'category-hrPFe')}">
+            <div class="position-relative" th:each="post : ${posts.items}">
                 <!-- 新闻图片 -->
-                <img th:src="@{/assets/images/new_b.png}" alt="新闻图片描述" class="img-fluid">
+                <img th:src="${post.spec.cover}" alt="新闻图片描述" class="img-fluid" style="width: 100%; height: auto;">
                 <!-- 完全透明的标题和日期遮罩层 -->
                 <div class="position-absolute bottom-0 start-0 w-100 text-white p-3">
-                    <!-- 新闻标题 -->
-                    <h5 class="mb-0">新闻标题</h5>
-                    <!-- 新闻日期 -->
-                    <p class="mb-0">2022-08-01</p>
+                    <h5 th:text="${post.spec.title}"></h5>
+                    <p class="text-muted" th:text="${post.spec.publishTime}"></p>
                 </div>
             </div>
         </div>
 
         <!-- 右侧新闻列表 改：需要自动获取新闻，填入标题和内容页-->
-        <div class="col-lg-6">
-            <div class="row mb-4">
+        <div class="col-lg-6" th:with="posts = ${postFinder.listByCategory(1,3,'category-hrPFe')}">
+            <div class="row mb-4" th:each="post : ${posts.items}">
                 <div class="col-md-4">
-                    <img th:src="@{/assets/images/news_s.png}" alt="小图描述1" class="img-fluid">
+                    <img th:src="${post.spec.cover}" alt="小图描述1" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <h5>新闻标题1</h5>
-                    <p>摘要内容1...</p>
-                    <p class="text-muted">2022-08-01</p>
-                </div>
-            </div>
-            
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <img th:src="@{/assets/images/news_s.png}" alt="小图描述2" class="img-fluid">
-                </div>
-                <div class="col-md-8">
-                    <h5>新闻标题2</h5>
-                    <p>摘要内容2...</p>
-                    <p class="text-muted">2022-08-01</p>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <img th:src="@{/assets/images/news_s.png}" alt="小图描述3" class="img-fluid">
-                </div>
-                <div class="col-md-8">
-                    <h5>新闻标题3</h5>
-                    <p>摘要内容3...</p>
-                    <p class="text-muted">2022-08-01</p>
+                    <h5 th:text="${post.spec.title}"></h5>
+                    <p th:text="${post.status.excerpt}"></p>
+                    <p class="text-muted" th:text="${post.spec.publishTime}"></p>
                 </div>
             </div>
         </div>
