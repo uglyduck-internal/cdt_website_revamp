@@ -22,30 +22,28 @@
             <div id="clinicalCarousel1" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
+                        <div class="row" th:with="posts = ${postFinder.listByCategory(1, 4, 'category-wNxdv')}">
                             <!-- 重复以下div来创建更多产品展示 -->
-                            <div class="col-3">
+                            <div class="col-3" th:each="post : ${posts.items}">
                                 <div class="product-panel border">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 1</div>
+                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}" alt="产品图片"></a>
+                                    <div class="product-name">
+                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <div class="product-panel border ">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 2</div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="product-panel border ">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 3</div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="product-panel border ">
-                                    <img th:src="@{/assets/images/new_b.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 4</div>
+                            <!-- 产品展示结束 -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" th:with="posts = ${postFinder.listByCategory(4, 50, 'category-wNxdv')}">
+                            <!-- 重复以下div来创建更多产品展示 -->
+                            <div class="col-3" th:each="post : ${posts.items}">
+                                <div class="product-panel border">
+                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}" alt="产品图片"></a>
+                                    <div class="product-name">
+                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- 产品展示结束 -->
@@ -71,30 +69,28 @@
             <div id="clinicalCarousel2" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
+                        <div class="row" th:with="posts = ${postFinder.listByCategory(1, 4, 'category-CxxMU')}">
                             <!-- 重复以下div来创建更多产品展示 -->
-                            <div class="col-3">
+                            <div class="col-3" th:each="post : ${posts.items}">
                                 <div class="product-panel border">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 4</div>
+                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}" alt="产品图片"></a>
+                                    <div class="product-name">
+                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <!-- 产品展示结束 -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" th:with="posts = ${postFinder.listByCategory(4, 50, 'category-CxxMU')}">
+                            <!-- 重复以下div来创建更多产品展示 -->
+                            <div class="col-3" th:each="post : ${posts.items}">
                                 <div class="product-panel border">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 5</div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="product-panel border">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 6</div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="product-panel border">
-                                    <img th:src="@{/assets/images/news_s.png}" alt="产品图片">
-                                    <div class="product-name">产品名称 7</div>
+                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}" alt="产品图片"></a>
+                                    <div class="product-name">
+                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- 产品展示结束 -->
