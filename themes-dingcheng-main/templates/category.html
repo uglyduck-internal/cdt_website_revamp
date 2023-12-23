@@ -5,36 +5,39 @@
 >
   <th:block th:fragment="content">
     <div class="position-relative">
-      <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="">
-      <div class="position-absolute bottom-0 start-33 translate-middle">
-        <h1 class="text-dark" th:text="${category.spec.displayName}"></h1>
-
+      <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="描述性文字">
+      <div class="position-absolute bottom-0 start-33 translate-middle" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        <br>
+        <h1 class="text-dark">产品中心 | Product Center</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-1">
       </div>
       <div class="col-md-3">
-        <!-- <ul th:with="categories = ${categoryFinder.list(1,10)}">
-          <li th:each="category : ${categories.items}">
-            <a th:href="@{${category.status.permalink}}" th:text="${category.spec.displayName}"></a><span th:text="${category.metadata.name}"></span>
-          </li>
-        </ul> -->
-
-        <div th:with="categoryNames=${#strings.arraySplit('category-TpdvY,category-jXOzB,category-hiwdQ',',')}">
-          <div th:each="category1 : ${categoryFinder.getByNames(categoryNames)}">
-            <a class="btn btn-lg btn-info btn-block m-1" type="button" th:href="@{${category1.status.permalink}}" th:text="${category1.spec.displayName}"></a>
-          </div>
+        <br><br><br><br>
+        <div class="btn-group dropend">
+          <a class="btn btn-outline-dark btn-lg dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
+          th:text="${category.spec.displayName}" 
+          href="#">
+          </a>
+        
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li th:with="category = ${categoryFinder.getByName('category-CxxMU')}">
+              <a class="dropdown-item" th:href="@{${category.status.permalink}}">技工产品</a>
+            </li>
+            <li th:with="category = ${categoryFinder.getByName('category-wNxdv')}">
+              <a class="dropdown-item" th:href="@{${category.status.permalink}}">临床产品</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="col-md-7">
-        <div class="row" th:with="posts = ${postFinder.list(1,8)}">
+        <div class="row" th:with="posts = ${postFinder.listByCategory(1, 100, category.metadata.name)}" >
           <div class="col-md-6" th:each="post : ${posts.items}">
             <div class="card">
               <img class="card-img-top"  style="height: 300px;" alt="" th:src="${post.spec.cover}"  />
               <div class="card-block">
-                <h5 class="card-title" th:text="${post.spec.title}">
-                </h5>
                 <p class="card-text" th:text="${post.status.excerpt}">
                 </p>
                 <p>
@@ -50,10 +53,7 @@
       <div class="col-md-1">
       </div>
     </div>
-    <div class="row">
-      <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
-      <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
-    </div>
-
+    <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
+    <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
   </th:block>
 </html>
