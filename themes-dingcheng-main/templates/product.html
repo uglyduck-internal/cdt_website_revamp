@@ -26,13 +26,12 @@
                         <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-wNxdv')}">
                             <!-- 重复以下div来创建更多产品展示 -->
                             <div class="col-3" th:each="post : ${posts.items}">
-                                <div class="product-panel border">
-                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}"
-                                            alt="产品图片"></a>
-                                    <div class="product-name">
-                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                <a th:href="@{${post.status.permalink}}">
+                                    <div class="product-panel border">
+                                        <img th:src="${post.spec.cover}" alt="产品图片">
+                                        <div class="product-name" th:text="${post.spec.title}"></div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -60,13 +59,12 @@
                         <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-CxxMU')}">
                             <!-- 重复以下div来创建更多产品展示 -->
                             <div class="col-3" th:each="post : ${posts.items}">
-                                <div class="product-panel border">
-                                    <a th:href="@{${post.status.permalink}}"><img th:src="${post.spec.cover}"
-                                            alt="产品图片"></a>
-                                    <div class="product-name">
-                                        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+                                <a th:href="@{${post.status.permalink}}">
+                                    <div class="product-panel border">
+                                        <img th:src="${post.spec.cover}" alt="产品图片">
+                                        <div class="product-name" th:text="${post.spec.title}"></div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
