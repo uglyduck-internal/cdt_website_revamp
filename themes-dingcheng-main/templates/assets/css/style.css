@@ -13,6 +13,11 @@ h1 {
   right: 33.33% !important; /* In RTL reading modes (like Arabic) */
 }
 
+.start-27 {
+  left: 27.33% !important;  /* In LTR reading modes (like English) */
+  right: 33.33% !important; /* In RTL reading modes (like Arabic) */
+}
+
 .product-panel {
   height: 340px;
   width: 300px;
