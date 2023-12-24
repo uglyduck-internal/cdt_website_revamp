@@ -25,6 +25,7 @@ h1 {
 .product-panel img {
   max-width: 300px;
   max-height: 300px;
+  --bs-border-color: #0055A8;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -50,4 +51,14 @@ h1 {
 
 .carousel-item {
   white-space: nowrap;
+}
+
+.btn-blue-custom {
+  background-color: #0055A8; /* Replace with your desired color */
+  color: #FFFFFF; /* Replace with your desired text color */
+}
+
+.btn-white-custom {
+  background-color: #FFFFFF; /* Replace with your desired color */
+  color: #0055A8; /* Replace with your desired text color */
 }
