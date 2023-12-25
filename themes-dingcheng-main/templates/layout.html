@@ -18,7 +18,7 @@
     <script th:src="@{/assets/js/main.js}"></script>
     
   </head>
-  <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
+  <body style="background-color: #FFFFFF">
     <th:block th:replace="~{menu}"/>
     <div class="container">
 
@@ -31,14 +31,5 @@
         <th:block th:replace="~{feet}" />
       </footer>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var elements = document.querySelectorAll('.text-muted');
-        elements.forEach(function(element) {
-          var date = new Date(element.textContent);
-          element.textContent = date.toISOString().split('T')[0];
-        });
-      });
-    </script>
   </body>
 </html>
