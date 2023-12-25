@@ -42,7 +42,11 @@ h1 {
   text-align: center;  /* 文字水平居中 */
   width: 100%;  /* 文字区域宽度为100% */
 }
-
+.product-card {
+  --bs-card-border-color: #0055A8;
+  width: 350px;
+  height: 278px;
+}
 .position-absolute {
   left: calc(100% / 3);
 }
@@ -85,4 +89,9 @@ h1 {
 
 .phone-number {
   color: #00A1E9;
+}
+
+.switch-page {
+  color: #0055A8;
+  text-decoration: none;
 }
