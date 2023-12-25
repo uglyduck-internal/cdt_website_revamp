@@ -95,3 +95,7 @@ h1 {
   color: #0055A8;
   text-decoration: none;
 }
+
+.container-fluid {
+  border-top: 2px solid black;
+}
