@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img th:src="@{/assets/images/logo.png}" alt="Logo" height="40">
+      <img th:src="@{/assets/images/logo.png}" alt="Logo" height="102" width="320">
     </a>
     <div th:with="menu = ${menuFinder.getPrimary()}" class="collapse navbar-collapse">
       <ul th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" class="navbar-nav me-auto mb-2 mb-lg-0">
