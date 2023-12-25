@@ -21,6 +21,7 @@ h1 {
 .product-panel {
   height: 340px;
   width: 300px;
+  color: black;
   --bs-border-color: #0055A8;
   display: flex;
   flex-direction: column;  /* 保持垂直堆叠 */
@@ -70,4 +71,8 @@ h1 {
 
 .tab-custom {
   --bs-nav-link-color: black;
+}
+
+.no-underline {
+  text-decoration: none;
 }
