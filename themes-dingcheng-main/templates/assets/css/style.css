@@ -67,3 +67,7 @@ h1 {
   background-color: #FFFFFF; /* Replace with your desired color */
   color: #0055A8; /* Replace with your desired text color */
 }
+
+.tab-custom {
+  --bs-nav-link-color: black;
+}
