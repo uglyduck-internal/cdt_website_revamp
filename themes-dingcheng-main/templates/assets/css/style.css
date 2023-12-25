@@ -73,6 +73,15 @@ h1 {
   --bs-nav-link-color: black;
 }
 
-.no-underline {
+.no-underline-link {
   text-decoration: none;
+  color: black;
+}
+
+.menu-bar {
+  padding-left: 170px;
+}
+
+.phone-number {
+  color: #00A1E9;
 }

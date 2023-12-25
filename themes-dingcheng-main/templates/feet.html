@@ -1,33 +1,43 @@
 <footer class="container border-top bg-light"></footer>
+    <div>
+      <!-- Logo和导航链接 -->
+      <img th:src="@{/assets/images/logo.png}" alt="公司Logo" width="318" height="100">
+    </div>
     <div class="row">
-      <div class="col-md-4">
-        <!-- Logo和导航链接 -->
-        <img th:src="@{/assets/images/logo.png}" alt="公司Logo" width="318" height="100">
-        <ul class="list-unstyled mt-3">
-          <li><a href="#">首页</a></li>
-          <li><a href="#">产品</a></li>
-          <li><a href="#">资讯</a></li>
-          <li><a href="#">关于</a></li>
-          <li><a href="#">帮助</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
+      <div class="col-2">
         <!-- 公司信息链接 -->
-        <h5>关于公司</h5>
+        <h5>关于启登特</h5>
         <ul class="list-unstyled mt-2">
-          <li><a href="#">企业简介</a></li>
-          <li><a href="#">企业文化</a></li>
-          <li><a href="#">联系我们</a></li>
-          <li><a href="#">加入我们</a></li>
+          <li><a class="no-underline-link" href="#">企业简介</a></li>
+          <li><a class="no-underline-link" href="#">企业文化</a></li>
+          <li><a class="no-underline-link" href="#">荣誉资源</a></li>
+          <li><a class="no-underline-link" href="#">研发实力</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-2">
         <!-- 联系方式 -->
-        <h5>联系方式</h5>
+        <h5>资料下载</h5>
         <ul class="list-unstyled mt-2">
-          <li><a href="mailto:renyisong@netease.com">renyisong@netease.com</a></li>
-          <li>电话: 021-25458785</li>
-          <li>服务时间: 9:00-17:30</li>
+          <li><a class="no-underline-link" href="#">使用说明书</a></li>
+          <li><a class="no-underline-link" href="#">安全数据表</a></li>
+          <li><a class="no-underline-link" href="#">产品宣传资料</a></li>
+          <li><a class="no-underline-link" href="#">产品使用图示</a></li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <!-- 联系方式 -->
+        <h5>联系我们</h5>
+        <ul class="list-unstyled mt-2">
+          <li>武汉市新洲阳经济开发区平江大道</li>
+          <li>mailto: renyisong@netease.com</li>
+        </ul>
+      </div>
+      <div class="col-2">
+        <!-- 联系方式 -->
+        <h5>服务热线:</h5>
+        <ul class="list-unstyled mt-2">
+          <li><h4 class="phone-number">021-25458785</h4></li>
+          <li>周一至周五 9:00 - 17:30, 节假日休息</li>
           <li><img th:src="@{/assets/images/dingchen.png}" alt="二维码" width="100"></li>
         </ul>
       </div>

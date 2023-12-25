@@ -26,8 +26,8 @@
                         <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-wNxdv')}">
                             <!-- 重复以下div来创建更多产品展示 -->
                             <div class="col-3" th:each="post : ${posts.items}">
-                                <a class="no-underline" th:href="@{${post.status.permalink}}">
-                                    <div class="product-panel border no-underline">
+                                <a class="no-underline-link" th:href="@{${post.status.permalink}}">
+                                    <div class="product-panel border no-underline-link">
                                         <img th:src="${post.spec.cover}" alt="产品图片">
                                         <div class="product-name" th:text="${post.spec.title}"></div>
                                     </div>
@@ -59,8 +59,8 @@
                         <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-CxxMU')}">
                             <!-- 重复以下div来创建更多产品展示 -->
                             <div class="col-3" th:each="post : ${posts.items}">
-                                <a class="no-underline" th:href="@{${post.status.permalink}}">
-                                    <div class="product-panel border no-underline">
+                                <a class="no-underline-link" th:href="@{${post.status.permalink}}">
+                                    <div class="product-panel border no-underline-link">
                                         <img th:src="${post.spec.cover}" alt="产品图片">
                                         <div class="product-name" th:text="${post.spec.title}"></div>
                                     </div>
