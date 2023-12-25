@@ -2,34 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
 <th:block th:fragment="content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6">
-                <div class="page-header">
-                    <h1 th:text="${post.spec.title}">
-                    </h1>
-                </div>
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div>
-        <!-- <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6 text-center">
-                <img alt="" src="../assets/images/gghzjzjj.png" />
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div> -->
-        <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6 custom-bg"  th:utext="${post.content.content}">
-            </div>
-            <div class="col-md-3">
-            </div>
+        <div class="col-md-12 custom-bg"  th:utext="${post.content.content}">
         </div>
     </div>
 </th:block>
