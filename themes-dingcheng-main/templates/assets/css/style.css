@@ -67,6 +67,7 @@ h1 {
 .btn-white-custom {
   background-color: #FFFFFF; /* Replace with your desired color */
   color: #0055A8; /* Replace with your desired text color */
+  border-color: #0055A8;
 }
 
 .tab-custom {
@@ -79,7 +80,7 @@ h1 {
 }
 
 .menu-bar {
-  padding-left: 170px;
+  padding-right: 60px;
 }
 
 .phone-number {

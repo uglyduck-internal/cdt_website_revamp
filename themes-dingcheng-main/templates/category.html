@@ -41,11 +41,17 @@
             <div class="card">
               <img class="card-img-top"  style="height: 300px;" alt="" th:src="${post.spec.cover}"  />
               <div class="card-block">
-                <p class="card-text" th:text="${post.status.excerpt}">
-                </p>
-                <p>
-                  <a class="btn btn-primary" th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
-                </p>
+                <div><h5 th:text="${post.spec.title}"><h5></div>
+                <div class="row">
+                  <div class="col-5" th:text="${post.status.excerpt}">
+                  </div>
+                  <div class="col-md-auto">
+                    <a class="btn btn-blue-custom" th:href="@{${post.status.permalink}}">查看详情 ></a>
+                  </div>
+                  <div class="col-auto">
+                    <p class="btn btn-white-custom" th:text="${category.spec.description}"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
