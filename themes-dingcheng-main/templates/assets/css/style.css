@@ -42,6 +42,12 @@ h1 {
   text-align: center;  /* 文字水平居中 */
   width: 100%;  /* 文字区域宽度为100% */
 }
+
+.product-name-lg{
+  width: 520px;
+  height: 412px;
+}
+
 .product-card {
   --bs-card-border-color: #0055A8;
   width: 350px;
@@ -68,10 +74,30 @@ h1 {
   color: #FFFFFF; /* Replace with your desired text color */
 }
 
+.btn-blue-lg{
+  width: 269px;   /* 按钮大小 */
+  height: 56px;
+  text-align: center; /* 文本水平居中 */
+  line-height: 56px; 
+  font-size: 24px;  /* 文字大小 */
+  opacity: 1; /* 设置不透明度为100% */
+  padding: 0; /* 设置填充为0，确保没有额外的内边距 */
+}
+
 .btn-white-custom {
   background-color: #FFFFFF; /* Replace with your desired color */
   color: #0055A8; /* Replace with your desired text color */
   border-color: #0055A8;
+}
+
+.btn-white-lg{
+  width: 274px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  opacity: 1; /* 设置不透明度为100% */
+  padding: 0; /* 设置填充为0，确保没有额外的内边距 */
 }
 
 .tab-custom {
