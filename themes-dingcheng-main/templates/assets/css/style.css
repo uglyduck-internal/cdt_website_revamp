@@ -50,15 +50,15 @@ h1 {
 
 .product-card {
   --bs-card-border-color: #0055A8;
-  width: 350px;
-  height: 278px;
+  width: 370px;
+  height: 420px;
 }
 .position-absolute {
   left: calc(100% / 3);
 }
 
 .custom-bg {
-  background-image: url('../assets/images/bl.png');
+  background-image: url('../images/bl.png');
   background-size: contain;
   background-position: bottom;
   background-attachment: fixed; /* 让背景图固定在视口中 */
@@ -73,6 +73,7 @@ h1 {
   background-color: #0055A8; /* Replace with your desired color */
   color: #FFFFFF; /* Replace with your desired text color */
 }
+
 
 .btn-blue-lg{
   width: 269px;   /* 按钮大小 */
@@ -96,6 +97,19 @@ h1 {
   text-align: center;
   line-height: 60px;
   font-size: 24px;
+  opacity: 1; /* 设置不透明度为100% */
+  padding: 0; /* 设置填充为0，确保没有额外的内边距 */
+}
+
+/* 研发团队按钮大小 */
+.btn-white-team{
+  background-color: #FFFFFF;
+  color: #0055A8; 
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 22px;
   opacity: 1; /* 设置不透明度为100% */
   padding: 0; /* 设置填充为0，确保没有额外的内边距 */
 }
@@ -138,5 +152,5 @@ h1 {
 }
 
 .custom-br {
-  line-height:0.3;
+  line-height:0.3; /* 或者使用 line-height: 50%; */
 }

@@ -86,22 +86,30 @@
         </div>
     </div>
 </div>
-<div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
-    <h1>研发团队</h1>
-</div>
-<div class="position-relative mb-5" style="display: flex; justify-content: space-between;">
-    <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}"
-        style="margin-right: 10px;">
-        <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                alt="研发团队"></a>
+<div style="background-color: #F6FBFF;">
+    <div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
+        <br><br><br>
+        <h1>研发团队</h1>
+        <br><br>
     </div>
-    <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
-        style="margin-right: 10px;">
-        <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                alt="研发设备"></a>
-    </div>
-    <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}">
-        <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                alt="生产设施"></a>
+    <div class="position-relative mb-5" style="display: flex; justify-content: space-between;background-color: #F6FBFF;">
+        <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}"
+            style="margin-right: 10px; background-color: #F6FBFF;;">
+            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid img-background"
+                    alt="研发团队">
+                <button type="button" style="position: absolute; bottom: 150px; left: 55px;   background-color: #FFFFFF;  border-color: #1F68B0;">
+                    <a href="#" class="btn btn-white-team">MORE</a>
+                </button>
+            </a>
+        </div>
+        <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
+            style="margin-right: 10px; background-color: #F6FBFF;">
+            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                    alt="研发设备"></a>
+        </div>
+        <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}">
+            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                    alt="生产设施"></a>
+        </div>
     </div>
 </div>
