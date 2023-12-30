@@ -125,3 +125,18 @@ h1 {
 .container-fluid {
   border-top: 2px solid black;
 }
+
+/*  下横线的样式  */
+.footer-underline{
+  border-top: 1px solid #656464; /* 下横线样式，可以根据需要调整颜色和样式 */
+  padding-top: 10px; /* 可以根据需要调整上边距 */
+  text-align: center; /* 让文字居中显示 */
+}
+
+.signature{
+  font-size: x-small; /* 根据需要调整字体大小 */
+}
+
+.custom-br {
+  line-height:0.3; /* 或者使用 line-height: 50%; */
+}
