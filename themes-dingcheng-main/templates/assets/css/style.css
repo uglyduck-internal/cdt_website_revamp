@@ -41,11 +41,9 @@ h1 {
 .product-name {
   text-align: center;  /* 文字水平居中 */
   width: 100%;  /* 文字区域宽度为100% */
-}
-
-.product-name-lg{
-  width: 520px;
-  height: 412px;
+  position: relative;
+  top: -25px;   /* 调整文字与边框距离 */
+  font-weight: bold; /* 文字加粗 */
 }
 
 .product-card {
@@ -114,6 +112,14 @@ h1 {
   padding: 0; /* 设置填充为0，确保没有额外的内边距 */
 }
 
+.btn-white-team-pos{
+  position: absolute; 
+  bottom: 150px; 
+  left: 55px;   
+  background-color: #FFFFFF;  
+  border-color: #1F68B0;
+}
+
 .tab-custom {
   --bs-nav-link-color: black;
 }
@@ -153,4 +159,19 @@ h1 {
 
 .custom-br {
   line-height:0.3; /* 或者使用 line-height: 50%; */
+}
+
+/* 产品中心 */
+.product-background{
+  background-image: url('../images/bl.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 25px;
+}
+
+.btn-white-product-pos{
+  position: relative; 
+  left: 489px; 
+  top: -55px;
 }
