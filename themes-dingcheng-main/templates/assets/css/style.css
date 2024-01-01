@@ -175,3 +175,10 @@ h1 {
   left: 489px; 
   top: -55px;
 }
+
+/* 新闻部分按钮 */
+.btn-white-news-pos{
+  position: relative; 
+  left: 489px; 
+  top: -18px;
+}
