@@ -21,7 +21,7 @@
         <br><br><br><br>
         <div class="btn-group dropend">
           <a class="btn btn-outline-dark btn-lg dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
-          th:text="${category.spec.displayName}" 
+          th:text="${category.spec.displayName}"
           href="#">
           </a>
         
@@ -63,16 +63,16 @@
                 </span>
               </span>
               <span th:unless="${#numbers.sequence(page,page)[0] > 1}">
-                <h2><</h2>
+                <span class="iconfont icon-roundleftfill-copy" style="font-size: 2rem;"></span>
               </span>
               <span><h2>·······</h2></span>
               <span th:if="${#numbers.sequence(page,page)[0] < (posts.total / 8 + 1)}">
                 <span th:with="next = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]+1)}">
-                  <a class="switch-page" th:href="@{${next}}"><h2>></h2></a>
+                  <a class="switch-page" th:href="@{${next}}"><span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span></a>
                 </span>
               </span>
               <span th:unless="${#numbers.sequence(page,page)[0] < (posts.total / 8 + 1)}">
-                <h2>></h2>
+                <span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span>
               </span>
             </div>
           </div>         
