@@ -176,6 +176,23 @@ h1 {
   top: -55px;
 }
 
+/* 产品页面分类 */
+.product-fenlei{
+  background-image: url('../images/bl-2.png');
+  background-color: #F6FBFF;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 27%;
+  min-height: 100vh; 
+  position: relative;
+  right: -12px;
+}
+
+.content{
+  padding-left: 5%;
+}
+
 /* 新闻部分按钮 */
 .btn-white-news-pos{
   position: relative; 

@@ -15,24 +15,28 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-1">
-      </div>
-      <div class="col-md-3">
-        <br><br><br><br>
-        <div class="btn-group dropend">
-          <a class="btn btn-outline-dark btn-lg dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
-          th:text="${category.spec.displayName}"
-          href="#">
-          </a>
-        
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li th:with="category = ${categoryFinder.getByName('category-CxxMU')}">
-              <a class="dropdown-item" th:href="@{${category.status.permalink}}">技工产品</a>
-            </li>
-            <li th:with="category = ${categoryFinder.getByName('category-wNxdv')}">
-              <a class="dropdown-item" th:href="@{${category.status.permalink}}">临床产品</a>
-            </li>
-          </ul>
+      <div class="product-fenlei">
+        <div class="content">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <br><br><br><br>
+            <div class="btn-group dropend" style="position: relative; right: -150px;">
+              <a class="btn btn-outline-dark btn-lg dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
+              th:text="${category.spec.displayName}"
+              href="#">
+              </a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li th:with="category = ${categoryFinder.getByName('category-CxxMU')}">
+                  <a class="dropdown-item" th:href="@{${category.status.permalink}}">技工产品</a>
+                </li>
+                <li th:with="category = ${categoryFinder.getByName('category-wNxdv')}">
+                  <a class="dropdown-item" th:href="@{${category.status.permalink}}">临床产品</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-7" th:with="page = ${param.pageID != null && param.pageID.length > 0 ? param.pageID[0] : 1}">
