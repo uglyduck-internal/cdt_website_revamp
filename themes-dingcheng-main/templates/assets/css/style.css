@@ -48,8 +48,8 @@ h1 {
 
 .product-card {
   --bs-card-border-color: #0055A8;
-  width: 436px;
-  height: 345px;
+  width: 455px;
+  height: 360.5px;
 }
 .position-absolute {
   left: calc(100% / 3);
@@ -164,10 +164,10 @@ h1 {
 /* 产品中心 */
 .product-background{
   background-image: url('../images/bl.png');
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 25px;
+  margin-bottom: -25px;
 }
 
 .btn-white-product-pos{
@@ -201,9 +201,18 @@ h1 {
 }
 
 /* product img text and btn */
+.row-gap{
+  margin-right: calc(-3.0 * var(--bs-gutter-x));
+}
+
+.card-gap{
+  margin-top: 1rem !important;
+  margin-left: 1rem !important;
+}
+
 .card-img{
-  height: 247px; 
-  width: 371px; 
+  height: 260px; 
+  width: 390px; 
   margin: auto; 
   padding-top: 15px; /* 改变距离 */
   object-fit: cover;
@@ -213,9 +222,11 @@ h1 {
   border-radius: 20px;
   position: relative;
   right: -25px;
+  top: -20px;
 }
 
 .text-pos{
+  margin-left: 10px;
   position: relative; 
   top: -20px;
 }
