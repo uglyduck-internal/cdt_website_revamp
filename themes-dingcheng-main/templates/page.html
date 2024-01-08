@@ -4,8 +4,18 @@
   th:replace="~{layout :: html(head = null,content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <h1 th:text="${singlePage.spec.title}"></h1>
-    <h1 th:text="${singlePage.metadata.name}"></h1>
+    <div class="position-relative">
+      <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="">
+      <div class="position-absolute bottom-0 start-27 translate-middle">
+        <h1 class="text-dark">
+          <div 
+          class="d-inline-block" 
+          style="white-space: nowrap; letter-spacing: 5px; font-weight: bold; margin-left: 53px;"
+          th:text="${singlePage.spec.excerpt.raw}">
+          </div>
+        </h1>
+      </div>
+    </div>
     <article th:utext="${singlePage.content.content}"></article>
   </th:block>
 </html>
