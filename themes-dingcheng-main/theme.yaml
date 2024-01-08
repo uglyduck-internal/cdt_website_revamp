@@ -13,6 +13,18 @@ spec:
   repo: "https://github.com/halo-sigs/theme-starter"
   settingName: "theme-dingchen-setting"
   configMapName: "theme-dingchen-configMap"
+  customTemplates:
+    post:
+      - name: 新闻模板
+        description: 新闻类型的文章
+        screenshot: 
+        file: post_news.html
+    category:
+      - name: 新闻分类模板
+        description: 新闻类型的文章中心
+        screenshot: 
+        file: categories_news.html
   version: "1.0"
   require: "*"
+
 
