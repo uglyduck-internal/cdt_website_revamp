@@ -13,7 +13,7 @@
 
     <div class="row">
         <!-- 左侧大图 改：自动获取最近发布的一条新闻-->
-        <div class="col-lg-6 mb-4" th:with="posts = ${postFinder.listByCategory(1,1,'category-hrPFe')}">
+        <div class="col-lg-6 mb-4" th:with="posts = ${postFinder.listByCategory(1,1,'category-pbPym')}">
             <div class="position-relative" th:each="post : ${posts.items}">
                 <!-- 新闻图片 -->
                 <img th:src="${post.spec.cover}" alt="新闻图片描述" class="img-fluid" style="width: 100%; height: auto;">
@@ -26,7 +26,7 @@
         </div>
 
         <!-- 右侧新闻列表 改：需要自动获取新闻，填入标题和内容页-->
-        <div class="col-lg-6" th:with="posts = ${postFinder.listByCategory(1,3,'category-hrPFe')}">
+        <div class="col-lg-6" th:with="posts = ${postFinder.listByCategory(1,3,'category-pbPym')}">
             <div class="row mb-4" th:each="post : ${posts.items}">
                 <div class="col-md-4">
                     <img th:src="${post.spec.cover}" alt="小图描述1" class="img-fluid">
