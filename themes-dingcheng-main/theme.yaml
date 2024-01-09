@@ -23,7 +23,7 @@ spec:
       - name: 新闻分类模板
         description: 新闻类型的文章中心
         screenshot: 
-        file: categories_news.html
+        file: category_news.html
   version: "1.0"
   require: "*"
 
