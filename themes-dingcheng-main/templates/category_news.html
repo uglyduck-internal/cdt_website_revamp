@@ -10,45 +10,34 @@
         <h1 class="text-dark">
           <div class="d-inline-block" style="white-space: nowrap; letter-spacing: 5px; font-weight: bold; margin-left: 53px;">
             新闻中心 | NEWS
-            <div th:text = "${category.metadata.name}"></div>
           </div>
         </h1>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="news-background">
+      <div class="container news-container">
         <div class="row">
-            <div th:with = "categoryName = ${category.metadata.name}"></div>
-            <div th:text="${categoryName}"></div>
             <!-- 按钮 -->
-            <div class="col-md-9">
-                <a th:with = "category = ${categoryFinder.getByName('category-pbPym')}" 
-                th:href="@{${category.status.permalink}}" class="btn btn-lg" role="button" style="margin-right: 10px; border-color: #FFFFFF;">   
-                    <h3>
-                        行业新闻<!-- jbOFh -->
-                        <div th:text = "categoryName"></div>
-                    </h3>
+            <div class="col-md-9 news-categories-col" th:with="current_category_name = ${category.metadata.name}">
+                <a th:with="category = ${categoryFinder.getByName('category-pbPym')}" 
+                th:href="@{${category.status.permalink}}"
+                th:class="${#strings.equals(current_category_name,'category-pbPym')} ? 'news-category-tab-active' : 'news-category-tab'">
+                    行业新闻
                 </a>
                 <a th:with = "category = ${categoryFinder.getByName('category-jbOFh')}" 
-                th:href="@{${category.status.permalink}}" class="btn btn-lg" role="button" style="border-color: #FFFFFF;">
-                    <h3>
-                        企业新闻<!-- pbPym -->
-                        <div th:text = "${categoryName == 'category-jbOFh'}"></div>
-                    </h3>
-                </a>                
+                th:href="@{${category.status.permalink}}"
+                th:class="${#strings.equals(current_category_name,'category-jbOFh')} ? 'news-category-tab-active' : 'news-category-tab'">
+                    企业新闻
+                </a>               
             </div>
             <!--  -->
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="row" th:with="posts = ${postFinder.listByCategory(1, 3, category.metadata.name)}">
                     <div class="col-md-4" th:each="post : ${posts.items}">
                         <div class="card">
                             <img class="card-img-top" alt="news cover" th:src="${post.spec.cover}" />
-                            <div class="card-block">
-                                <h5 class="card-title">
-                                    <div th:text="${post.spec.title}"></div>
-                                </h5>
-                                <p class="card-text">
-                                    <div th:text="${post.status.excerpt}"></div>
-                                </p>
+                            <div class="card-block news-card-block">
+                                <div class="news-card-title" th:text="${post.spec.title}"></div>
                             </div>
                         </div>
                     </div>
@@ -57,28 +46,42 @@
         </div>
         
         <div class="row">
-            <div class="col-md-12">
-                <ul class="nav flex-column nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Messages</a>
-                    </li>
-                    <li class="nav-item dropdown ml-md-auto">
-                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                             <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider">
-                            </div> <a class="dropdown-item" href="#">Separated link</a>
+            <div class="col-md-12" th:with="page = ${param.pageID != null && param.pageID.length > 0 ? param.pageID[0] : 1}">
+                <ul class="news-ul" th:with="posts = ${postFinder.listByCategory(page, 3, category.metadata.name)}">
+                    <li class="news-li" th:each="post : ${posts.items}">
+                        <img th:src="@{/assets/images/竖线.png}" class="news-icon" alt="">
+                        <div class="news-content">
+                            <a th:href="@{${post.status.permalink}}"
+                            th:text="${post.spec.title}">
+                            </a>
+                            <p th:text="${post.spec.excerpt.raw}"></p>
                         </div>
                     </li>
                 </ul>
+                <div class="position-relative">
+                    <div class="d-flex justify-content-start mt-3">
+                      <span th:if="${#numbers.sequence(page,page)[0] > 1}">
+                        <span th:with="previous = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]-1)}">
+                          <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundleftfill" style="font-size: 2rem;"></span></a>
+                        </span>
+                      </span>
+                      <span th:unless="${#numbers.sequence(page,page)[0] > 1}">
+                        <span class="iconfont icon-roundleftfill-copy" style="font-size: 2rem;"></span>
+                      </span>
+                      <span><h2>·······</h2></span>
+                      <span th:if="${#numbers.sequence(page,page)[0] < (posts.total / 3 + 1)}">
+                        <span th:with="next = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]+1)}">
+                          <a class="switch-page" th:href="@{${next}}"><span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span></a>
+                        </span>
+                      </span>
+                      <span th:unless="${#numbers.sequence(page,page)[0] < (posts.total / 3 + 1)}">
+                        <span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span>
+                      </span>
+                    </div>
+                </div>   
             </div>
         </div>
+      </div>
     </div>
   </th:block>
 </html>
