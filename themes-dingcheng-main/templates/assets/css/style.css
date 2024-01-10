@@ -99,6 +99,16 @@ h1 {
 
 .tab-custom {
   --bs-nav-link-color: black;
+  font-size: larger;
+  margin-bottom: 10px;
+}
+
+.nav-item .active{
+  text-decoration-line: underline;
+  text-decoration-color: #0254A6;
+  text-underline-offset: 8px;
+  color: #131414;
+  font-weight: bold;
 }
 
 .no-underline-link {
