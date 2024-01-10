@@ -14,6 +14,9 @@
     <title th:text="${site.title}"></title>
     <link rel="stylesheet" th:href="@{/assets/css/bootstrap.css?v={version}(version=${theme.spec.version})}"/>
     <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style-news.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style-product.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/iconfont.css}" />
     <script th:src="@{/assets/js/bootstrap.bundle.js?v={version}(version=${theme.spec.version})}"></script>
     <script th:src="@{/assets/js/main.js}"></script>
     
@@ -27,9 +30,9 @@
       </section>
       
 
-      <footer>
-        <th:block th:replace="~{feet}" />
-      </footer>
+      
+      <th:block th:replace="~{feet}" />
+      
     </div>
   </body>
 </html>

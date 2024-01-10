@@ -34,7 +34,7 @@
             <div class="col-md-10">
                 <div class="row" th:with="posts = ${postFinder.listByCategory(1, 3, category.metadata.name)}">
                     <div class="col-md-4" th:each="post : ${posts.items}">
-                        <div class="card">
+                        <div class="card news-card">
                             <img class="card-img-top" alt="news cover" th:src="${post.spec.cover}" />
                             <div class="card-block news-card-block">
                                 <div class="news-card-title" th:text="${post.spec.title}"></div>

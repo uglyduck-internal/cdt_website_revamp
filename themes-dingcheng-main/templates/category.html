@@ -16,13 +16,10 @@
     </div>
     <div class="row">
       <div class="product-fenlei">
-        <div class="content">
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-3">
-            <br><br><br><br>
-            <div class="btn-group dropend" style="position: relative; right: -150px;">
-              <a class="btn btn-outline-dark btn-lg dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
+        <div class="content product-leftbar-content">
+          <div class="col-md-12">
+            <div class="btn-group dropend product-dropdown">
+              <a class="btn btn-outline-dark btn-lg dropdown-toggle product-btn" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
               th:text="${category.spec.displayName}"
               href="#">
               </a>
@@ -63,7 +60,7 @@
             <div class="d-flex justify-content-end mt-3">
               <span th:if="${#numbers.sequence(page,page)[0] > 1}">
                 <span th:with="previous = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]-1)}">
-                  <a class="switch-page" th:href="@{${previous}}"><h2><</h2></a>
+                  <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span></a>
                 </span>
               </span>
               <span th:unless="${#numbers.sequence(page,page)[0] > 1}">

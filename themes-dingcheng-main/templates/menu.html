@@ -9,7 +9,7 @@
         <li th:each="menuItem : ${menu.menuItems}"
           th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-item' : 'nav-item dropdown'">
           <a th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-link' : 'nav-link dropdown-toggle'"
-            th:href="@{${menuItem.status.href}}" th:text="${menuItem.status.displayName}"
+            th:href="${#lists.isEmpty(menuItem.children)} ? @{${menuItem.status.href}} : '#'" th:text="${menuItem.status.displayName}"
             th:target="${menuItem.spec.target?.value}">
           </a>
           <ul th:if="${not #lists.isEmpty(menuItem.children)}" th:class="dropdown-menu">

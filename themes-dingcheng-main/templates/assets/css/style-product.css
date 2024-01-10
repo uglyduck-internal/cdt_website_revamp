@@ -1,0 +1,75 @@
+
+.product-panel {
+    height: 340px;
+    width: 300px;
+    color: black;
+    --bs-border-color: #0055A8;
+    display: flex;
+    flex-direction: column;  /* 保持垂直堆叠 */
+    align-items: center;  /* 水平居中内容 */
+    justify-content: center;  /* 垂直居中内容 */
+}
+
+.product-panel img {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;  /* 添加间距以分隔图像和文字 */
+}
+
+.product-name {
+    text-align: center;  /* 文字水平居中 */
+    width: 100%;  /* 文字区域宽度为100% */
+    position: relative;
+    top: -25px;   /* 调整文字与边框距离 */
+    font-weight: bold; /* 文字加粗 */
+}
+
+.product-card {
+    --bs-card-border-color: #0055A8;
+    --bs-card-border-radius: 0;
+    width: 455px;
+    height: 360.5px;
+}
+
+/* 产品中心 */
+.product-background{
+    background-image: url('../images/bl.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: -25px;
+  }
+  
+  /* 产品页面分类 */
+.product-fenlei{
+    background-image: url('../images/bl-2.png');
+    background-color: #F6FBFF;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    width: 27%;
+    min-height: 100vh; 
+    position: relative;
+    right: -12px;
+}
+
+.product-leftbar-content {
+    margin-top: 100px;
+}
+
+.product-dropdown {
+    width: 103%;
+    padding-left: 40%;
+}
+
+.product-btn {
+    --bs-btn-border-color: #0456A7;
+    --bs-btn-border-radius: 0;
+    --bs-btn-color: #2A2A2A;
+    --bs-btn-bg: #FFFFFF;
+    box-shadow: 0 0 10px #93c5f0; /* X偏移量, Y偏移量, 模糊半径, 颜色 */
+    transition: box-shadow 0.3s ease-in-out; /* 平滑过渡效果 */
+}

@@ -24,39 +24,6 @@ h1 {
   right: 33.33% !important; /* In RTL reading modes (like Arabic) */
 }
 
-.product-panel {
-  height: 340px;
-  width: 300px;
-  color: black;
-  --bs-border-color: #0055A8;
-  display: flex;
-  flex-direction: column;  /* 保持垂直堆叠 */
-  align-items: center;  /* 水平居中内容 */
-  justify-content: center;  /* 垂直居中内容 */
-}
-
-.product-panel img {
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;  /* 添加间距以分隔图像和文字 */
-}
-
-.product-name {
-  text-align: center;  /* 文字水平居中 */
-  width: 100%;  /* 文字区域宽度为100% */
-  position: relative;
-  top: -25px;   /* 调整文字与边框距离 */
-  font-weight: bold; /* 文字加粗 */
-}
-
-.product-card {
-  --bs-card-border-color: #0055A8;
-  width: 455px;
-  height: 360.5px;
-}
 .position-absolute {
   left: calc(100% / 3);
 }
@@ -169,28 +136,6 @@ h1 {
 
 .custom-br {
   line-height:0.3; /* 或者使用 line-height: 50%; */
-}
-
-/* 产品中心 */
-.product-background{
-  background-image: url('../images/bl.png');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: -25px;
-}
-
-/* 产品页面分类 */
-.product-fenlei{
-  background-image: url('../images/bl-2.png');
-  background-color: #F6FBFF;
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  width: 27%;
-  min-height: 100vh; 
-  position: relative;
-  right: -12px;
 }
 
 .content{
