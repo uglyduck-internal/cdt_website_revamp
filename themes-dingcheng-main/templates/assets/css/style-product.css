@@ -1,9 +1,10 @@
 
 .product-panel {
     height: 340px;
-    width: 300px;
+    width: 100%;
     color: black;
     --bs-border-color: #0055A8;
+    background-color: white;
     display: flex;
     flex-direction: column;  /* 保持垂直堆叠 */
     align-items: center;  /* 水平居中内容 */
@@ -41,7 +42,7 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: -25px;
-  }
+}
   
   /* 产品页面分类 */
 .product-fenlei{

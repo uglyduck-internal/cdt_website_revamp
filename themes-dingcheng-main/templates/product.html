@@ -1,121 +1,123 @@
-<div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
-    <h1>产品中心</h1>
-</div>
-<div>
-    <!-- 选项卡导航居中 -->
-    <ul class="nav justify-content-center" id="productTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link tab-custom active" id="clinical-tab" data-bs-toggle="tab" data-bs-target="#clinical"
-                type="button" role="tab" aria-controls="clinical" aria-selected="true">临床产品
-            </button>
-        </li>
-        <li class="nav-item tab-custom" role="presentation">
-            <button class="nav-link" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button"
-                role="tab" aria-controls="technical" aria-selected="false">技工产品
-            </button>
-        </li>
-    </ul>
-    <!-- 选项卡内容 -->
-    <div class="product-background">
-        <div class="tab-content" id="productTabContent">
-            <!-- 临床产品 -->
-            <div class="tab-pane fade show active" id="clinical" role="tabpanel" aria-labelledby="clinical-tab">
-                <div id="clinicalCarousel1" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner" th:with="posts=${postFinder.listByCategory(1, 1000, 'category-wNxdv')}">
-                        <div class="carousel-item" th:classappend="${i%4 == 1} ? 'active':''"
-                            th:each="i : ${#numbers.sequence(1, posts.total/4 + 1)}">
-                            <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-wNxdv')}">
-                                <!-- 重复以下div来创建更多产品展示 -->
-                                <div class="col-3" th:each="post : ${posts.items}">
-                                    <a class="no-underline-link" th:href="@{${post.status.permalink}}">
-                                        <div class="product-panel border no-underline-link">
-                                            <img th:src="${post.spec.cover}" alt="产品图片">
-                                            <div class="product-name" th:text="${post.spec.title}"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 方向按钮 -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#clinicalCarousel1"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">上一个</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#clinicalCarousel1"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">下一个</span>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-            <!-- 技工产品 -->
-            <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
-                <div id="clinicalCarousel2" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner" th:with="posts=${postFinder.listByCategory(1, 1000, 'category-CxxMU')}">
-                        <div class="carousel-item" th:classappend="${i%4 == 1} ? 'active':''"
-                            th:each="i : ${#numbers.sequence(1, posts.total/4 + 1)}">
-                            <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-CxxMU')}">
-                                <!-- 重复以下div来创建更多产品展示 -->
-                                <div class="col-3" th:each="post : ${posts.items}">
-                                    <a class="no-underline-link" th:href="@{${post.status.permalink}}">
-                                        <div class="product-panel border no-underline-link">
-                                            <img th:src="${post.spec.cover}" alt="产品图片">
-                                            <div class="product-name" th:text="${post.spec.title}"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 方向按钮 -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#clinicalCarousel2"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">上一个</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#clinicalCarousel2"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">下一个</span>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <br><br><br><br>
-        <!-- 按钮 -->
-        <div class="d-flex justify-content-center mt-2">
-            <a th:href="@{/categories/lin-chuang-chan-pin}" class="btn btn-white-custom btn-white-lg" style="  position: relative; top: -55px;">MORE</a>
-        </div>
-    </div>
-</div>
-<div style="background-color: #F6FBFF;">
+<div style="margin-left: 13.5%; margin-right: 13.5%;">
     <div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
-        <br><br>
-        <h1>研发团队</h1>
-        <br><br>
+        <h1>产品中心</h1>
     </div>
-    <div class="position-relative mb-5" style="display: flex; justify-content: space-between; background-color: #F6FBFF;">
-        <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}"
-            style="margin-right: 10px; background-color: #F6FBFF;;">
-            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                    alt="研发团队">
-                <div class="d-flex mt-2">
-                    <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos">MORE</a>
+    <div>
+        <!-- 选项卡导航居中 -->
+        <ul class="nav justify-content-center" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link tab-custom active" id="clinical-tab" data-bs-toggle="tab" data-bs-target="#clinical"
+                    type="button" role="tab" aria-controls="clinical" aria-selected="true">临床产品
+                </button>
+            </li>
+            <li class="nav-item tab-custom" role="presentation">
+                <button class="nav-link" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button"
+                    role="tab" aria-controls="technical" aria-selected="false">技工产品
+                </button>
+            </li>
+        </ul>
+        <!-- 选项卡内容 -->
+        <div class="product-background">
+            <div class="tab-content" id="productTabContent">
+                <!-- 临床产品 -->
+                <div class="tab-pane fade show active" id="clinical" role="tabpanel" aria-labelledby="clinical-tab">
+                    <div id="clinicalCarousel1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" th:with="posts=${postFinder.listByCategory(1, 1000, 'category-wNxdv')}">
+                            <div class="carousel-item" th:classappend="${i%4 == 1} ? 'active':''"
+                                th:each="i : ${#numbers.sequence(1, posts.total/4 + 1)}">
+                                <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-wNxdv')}">
+                                    <!-- 重复以下div来创建更多产品展示 -->
+                                    <div class="col-3" th:each="post : ${posts.items}">
+                                        <a class="no-underline-link" th:href="@{${post.status.permalink}}">
+                                            <div class="product-panel border no-underline-link">
+                                                <img th:src="${post.spec.cover}" alt="产品图片">
+                                                <div class="product-name" th:text="${post.spec.title}"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 方向按钮 -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#clinicalCarousel1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">上一个</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#clinicalCarousel1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">下一个</span>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
-            </a>
+                <!-- 技工产品 -->
+                <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
+                    <div id="clinicalCarousel2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" th:with="posts=${postFinder.listByCategory(1, 1000, 'category-CxxMU')}">
+                            <div class="carousel-item" th:classappend="${i%4 == 1} ? 'active':''"
+                                th:each="i : ${#numbers.sequence(1, posts.total/4 + 1)}">
+                                <div class="row" th:with="posts=${postFinder.listByCategory(i, 4, 'category-CxxMU')}">
+                                    <!-- 重复以下div来创建更多产品展示 -->
+                                    <div class="col-3" th:each="post : ${posts.items}">
+                                        <a class="no-underline-link" th:href="@{${post.status.permalink}}">
+                                            <div class="product-panel border no-underline-link">
+                                                <img th:src="${post.spec.cover}" alt="产品图片">
+                                                <div class="product-name" th:text="${post.spec.title}"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 方向按钮 -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#clinicalCarousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">上一个</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#clinicalCarousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">下一个</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+            <!-- 按钮 -->
+            <div class="d-flex justify-content-center mt-2">
+                <a th:href="@{/categories/lin-chuang-chan-pin}" class="btn btn-white-custom btn-white-lg" style="  position: relative; top: -55px;">MORE</a>
+            </div>
         </div>
-        <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
-            style="margin-right: 10px; background-color: #F6FBFF;">
-            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                    alt="研发设备"></a>
+    </div>
+    <div style="background-color: #F6FBFF;">
+        <div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
+            <br><br>
+            <h1>研发团队</h1>
+            <br><br>
         </div>
-        <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}">
-            <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                    alt="生产设施"></a>
+        <div class="position-relative mb-5" style="display: flex; justify-content: space-between; background-color: #F6FBFF;">
+            <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}"
+                style="margin-right: 10px; background-color: #F6FBFF;;">
+                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                        alt="研发团队">
+                    <div class="d-flex mt-2">
+                        <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos">MORE</a>
+                    </div>
+                </a>
+            </div>
+            <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
+                style="margin-right: 10px; background-color: #F6FBFF;">
+                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                        alt="研发设备"></a>
+            </div>
+            <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}">
+                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                        alt="生产设施"></a>
+            </div>
         </div>
     </div>
 </div>
