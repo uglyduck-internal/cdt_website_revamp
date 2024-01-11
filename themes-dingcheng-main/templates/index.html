@@ -21,9 +21,9 @@
                         <img th:src="${post.spec.cover}" alt="新闻图片描述" class="img-fluid" style="width: 100%; height: auto; border-radius: 10px;">
                     </a>
                     <!-- 完全透明的标题和日期遮罩层 -->
-                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-3">
+                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 overlay">
                         <h5 th:text="${post.spec.title}"></h5>
-                        <p class="text-muted" th:text="${post.spec.publishTime}"></p>
+                        <p class="text-muted" th:text="${post.spec.publishTime}" style="color: #FFFFFF !important; padding-left: 83%;"></p>
                     </div>
                 </div>
             </div>
@@ -34,11 +34,10 @@
                     <div class="col-md-4">
                         <img th:src="${post.spec.cover}" alt="小图描述1" class="img-fluid" style="border-radius: 10px;">
                     </div>
-                    <div class="col-md-8" style="background-color: #F6FBFF; border-radius: 10px;">
+                    <div class="col-md-8" style="background-color: #F6FBFF; border-radius: 10px; padding-top: 8%;">
                         <a class="no-underline-link" th:href="@{${post.status.permalink}}">
                             <h5 th:text="${post.spec.title}"></h5>
                         </a>
-                        <p th:text="${post.status.excerpt}"></p>
                         <p class="text-muted" th:text="${post.spec.publishTime}"></p>
                     </div>
                 </div>

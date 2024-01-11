@@ -169,32 +169,6 @@ h1 {
   padding-left: 5%;
 }
 
-/* product img text and btn */
-.row-gap{
-  margin-right: 10%;
-  margin-top: 4%;
-}
-
-.card-gap{
-  margin-top: 1rem !important;
-  margin-left: 1rem !important;
-}
-
-.card-img{
-  height: 260px; 
-  width: 390px; 
-  margin: auto; 
-  padding-top: 15px; /* 改变距离 */
-  object-fit: cover;
-}
-
-.card-btn-pos{
-  border-radius: 20px;
-  position: relative;
-  right: -25px;
-  top: -20px;
-}
-
 .h5-pos{
   margin-left: 10px;
   margin-bottom: 30px;
@@ -208,4 +182,8 @@ h1 {
 
 .news-gap{
   --bs-gutter-y:-0.3rem !important;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.2); /* 可改变0.2来改变黑色遮罩 */
 }
