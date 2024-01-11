@@ -190,3 +190,7 @@ h1 {
   position: relative; 
   top: -20px;
 }
+
+.news-gap{
+  --bs-gutter-y:-0.3rem !important;
+}

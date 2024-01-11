@@ -18,7 +18,7 @@
                 <div class="position-relative" th:each="post : ${posts.items}">
                     <!-- 新闻图片 -->
                     <a th:href="@{${post.status.permalink}}">
-                        <img th:src="${post.spec.cover}" alt="新闻图片描述" class="img-fluid" style="width: 100%; height: auto;">
+                        <img th:src="${post.spec.cover}" alt="新闻图片描述" class="img-fluid" style="width: 100%; height: auto; border-radius: 10px;">
                     </a>
                     <!-- 完全透明的标题和日期遮罩层 -->
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3">
@@ -30,11 +30,11 @@
 
             <!-- 右侧新闻列表 改：需要自动获取新闻，填入标题和内容页-->
             <div class="col-lg-6" th:with="posts = ${postFinder.listByCategory(1,3,'category-WJRfu')}">
-                <div class="row mb-4" th:each="post : ${posts.items}">
+                <div class="row mb-4 news-gap" th:each="post : ${posts.items}">
                     <div class="col-md-4">
-                        <img th:src="${post.spec.cover}" alt="小图描述1" class="img-fluid">
+                        <img th:src="${post.spec.cover}" alt="小图描述1" class="img-fluid" style="border-radius: 10px;">
                     </div>
-                    <div class="col-md-8" style="background-color: #F6FBFF;">
+                    <div class="col-md-8" style="background-color: #F6FBFF; border-radius: 10px;">
                         <a class="no-underline-link" th:href="@{${post.status.permalink}}">
                             <h5 th:text="${post.spec.title}"></h5>
                         </a>
