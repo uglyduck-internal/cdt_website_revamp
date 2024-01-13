@@ -1,5 +1,5 @@
 <div style="margin-left: 13.5%; margin-right: 13.5%;">
-    <div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
+    <div class="text-center mb-4 mt-5"> <!-- 添加这个div，mb-4为下边距 -->
         <h1>产品中心</h1>
     </div>
     <div>
@@ -86,37 +86,45 @@
                     </div>
                 </div>
             </div>
-            <br><br><br><br>
             <!-- 按钮 -->
-            <div class="d-flex justify-content-center mt-2">
-                <a th:href="@{/categories/lin-chuang-chan-pin}" class="btn btn-white-custom btn-white-lg" style="  position: relative; top: -55px;">MORE</a>
+            <div class="d-flex justify-content-center mt-4">
+                <a th:href="@{/categories/lin-chuang-chan-pin}" class="btn btn-white-custom btn-white-lg" style="position: relative">MORE</a>
             </div>
         </div>
     </div>
     <div style="background-color: #F6FBFF;">
-        <div class="text-center mb-4 mt-4"> <!-- 添加这个div，mb-4为下边距 -->
-            <br><br>
+        <div class="text-center mb-4 pt-5"> <!-- 添加这个div，mb-4为下边距 -->
             <h1>研发团队</h1>
-            <br><br>
         </div>
-        <div class="position-relative mb-5" style="display: flex; justify-content: space-between; background-color: #F6FBFF;">
-            <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}"
+        <div class="position-relative" style="display: flex; justify-content: space-between; background-color: #F6FBFF;">
+            <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}" 
+                class="image-container"
                 style="margin-right: 10px; background-color: #F6FBFF;;">
                 <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
                         alt="研发团队">
                     <div class="d-flex mt-2">
-                        <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos">MORE</a>
+                        <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
                     </div>
                 </a>
             </div>
             <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
+                class="image-container"
                 style="margin-right: 10px; background-color: #F6FBFF;">
                 <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                        alt="研发设备"></a>
+                        alt="研发设备">
+                        <div class="d-flex mt-2">
+                            <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
+                        </div>
+                    </a>
             </div>
-            <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}">
+            <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}"
+                class="image-container">
                 <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
-                        alt="生产设施"></a>
+                        alt="生产设施">
+                        <div class="d-flex mt-2">
+                            <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
+                        </div>
+                    </a>
             </div>
         </div>
     </div>

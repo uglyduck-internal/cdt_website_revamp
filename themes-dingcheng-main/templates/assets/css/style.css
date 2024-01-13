@@ -95,8 +95,8 @@ h1 {
 .btn-white-team{
   background-color: #FFFFFF;
   color: #0055A8; 
-  max-width: 10%;
-  width: 100%;
+/*   max-width: 10%; */
+  width: 150px;
   height: 40px;
   text-align: center;
   line-height: 40px;
@@ -185,5 +185,5 @@ h1 {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.2); /* 可改变0.2来改变黑色遮罩 */
+  background: rgba(0, 0, 0, 0.2); /* 半透明黑色背景 */
 }
