@@ -19,11 +19,13 @@
         <div class="content product-leftbar-content">
           <div class="col-md-12">
             <div class="btn-group dropend product-dropdown">
-              <a class="btn btn-outline-dark btn-lg dropdown-toggle product-btn" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" 
-              th:text="${category.spec.displayName}"
+              <a class="btn btn-outline-dark btn-lg dropdown-toggle product-btn" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
               href="#">
+                <span th:text="${category.spec.displayName}" style="padding-right: 100px;"></span>
+                <img th:src="@{/assets/images/next.png}" width="15px" height="28px" style="margin-right: -19px; color: #FFFFFF;" alt="next"/>
               </a>
-            
+              
+
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li th:with="category = ${categoryFinder.getByName('category-CxxMU')}">
                   <a class="dropdown-item" th:href="@{${category.status.permalink}}">技工产品</a>
@@ -38,7 +40,7 @@
       </div>
       <div class="col-md-8" th:with="page = ${param.pageID != null && param.pageID.length > 0 ? param.pageID[0] : 1}">
         <div class="row row-gap" th:with="posts = ${postFinder.listByCategory(page, 8, category.metadata.name)}" >
-          <div class="col-md-6" th:each="post : ${posts.items}">
+          <div class="col-md-6 product-col" th:each="post : ${posts.items}">
             <div class="card product-card card-gap">
               <img class="card-img-top card-img" alt="" th:src="${post.spec.cover}"  />
               <div class="card-block">
@@ -47,10 +49,16 @@
                   <div class="col text-pos" th:text="${post.status.excerpt}" style="font-size: small;">
                   </div>
                   <div class="col-md-auto">
-                    <a class="btn btn-blue-custom card-btn-pos" style="font-size: 12px" th:href="@{${post.status.permalink}}">查看详情 ></a>
-                  </div>
-                  <div class="col col-lg-3">
-                    <p class="btn btn-white-custom card-btn-pos" style="font-size: 12px" th:text="${category.spec.description}"></p>
+                    <a class="card-btn-pos no-underline-link" th:href="@{${post.status.permalink}}">
+                      <img class="card-btn-img" th:src="@{/assets/images/查看详情.png}" alt="" />
+                    </a>
+                    <span>&nbsp;</span>
+                    <span th:if="${#strings.equals(category.spec.description, '临床')}" class="card-btn-pos no-underline-link">
+                      <img class="card-btn-img" th:src="@{/assets/images/临床.png}" alt="" />
+                    </span>
+                    <span th:if="${#strings.equals(category.spec.description, '技工')}" class="card-btn-pos no-underline-link">
+                      <img class="card-btn-img" th:src="@{/assets/images/技工.png}" alt="" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -60,7 +68,7 @@
             <div class="d-flex justify-content-end mt-3">
               <span th:if="${#numbers.sequence(page,page)[0] > 1}">
                 <span th:with="previous = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]-1)}">
-                  <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span></a>
+                  <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundleftfill-copy" style="font-size: 2rem;"></span></a>
                 </span>
               </span>
               <span th:unless="${#numbers.sequence(page,page)[0] > 1}">
