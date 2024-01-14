@@ -187,3 +187,13 @@ h1 {
 .overlay {
   background: rgba(0, 0, 0, 0.2); /* 半透明黑色背景 */
 }
+
+.dropdown-toggles::after{
+  display: inline-block;
+  margin-left: 0.255em;
+  content: none !important;
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}

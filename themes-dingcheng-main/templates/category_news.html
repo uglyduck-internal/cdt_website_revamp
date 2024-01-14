@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="news-background">
-      <div class="container news-container">
+      <div class="container news-container" style="margin-left: 170px;">
         <div class="row">
             <!-- 按钮 -->
             <div class="col-md-9 news-categories-col" th:with="current_category_name = ${category.metadata.name}">
@@ -62,7 +62,7 @@
                     <div class="d-flex justify-content-start mt-3">
                       <span th:if="${#numbers.sequence(page,page)[0] > 1}">
                         <span th:with="previous = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]-1)}">
-                          <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundleftfill" style="font-size: 2rem;"></span></a>
+                          <a class="switch-page" th:href="@{${previous}}"><span class="iconfont icon-roundleftfill-copy" style="font-size: 2rem;"></span></a>
                         </span>
                       </span>
                       <span th:unless="${#numbers.sequence(page,page)[0] > 1}">
