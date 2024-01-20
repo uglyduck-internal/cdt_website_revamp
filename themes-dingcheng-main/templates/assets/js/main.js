@@ -18,4 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     });
 
+    // 转换时间日期
+    var elements = document.querySelectorAll('.text-muted');
+    elements.forEach(function(element) {
+      var date = new Date(element.textContent);
+      element.textContent = date.toISOString().split('T')[0];
+    });
+
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (!$(this).next().hasClass('show')) {
+          $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+        }
+        var $subMenu = $(this).next('.dropdown-menu');
+        $subMenu.toggleClass('show');
+      
+        return false;
+    });
 });

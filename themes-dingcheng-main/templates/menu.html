@@ -4,18 +4,53 @@
     <a class="navbar-brand" href="#">
       <img th:src="@{/assets/images/logo.png}" alt="Logo" height="102" width="320">
     </a>
-    <div th:with="menu = ${menuFinder.getPrimary()}" class="collapse navbar-collapse position-relative">
+    <div class="dropdown" th:with="menu = ${menuFinder.getPrimary()}">
+      <button class="navbar-toggler navbar-toggler-right collapsed" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" class="dropdown-menu" 
+          aria-labelledby="dropdownMenuButton">
+        <li th:each="menuItem : ${menu.menuItems}" 
+            th:class="${#lists.isEmpty(menuItem.children)} ? 'dropdown-item' : 'dropdown-item dropdown-submenu'"> 
+          <a th:class="${#lists.isEmpty(menuItem.children)} ? 'dropdown-item' : 'dropdown-item dropdown-toggle'" 
+             th:href="${#lists.isEmpty(menuItem.children)} ? @{${menuItem.status.href}} : '#'" 
+             th:text="${menuItem.status.displayName}" 
+             th:target="${menuItem.spec.target?.value}">
+          </a>
+          <ul th:if="${not #lists.isEmpty(menuItem.children)}" 
+              th:class="dropdown-menu">
+            <li th:each="childMenuItem : ${menuItem.children}">
+              <a th:class="dropdown-item" 
+                 th:href="@{${childMenuItem.status.href}}" 
+                 th:text="${childMenuItem.status.displayName}" 
+                 th:target="${childMenuItem.spec.target?.value}">
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">    
+    <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <div th:with="menu = ${menuFinder.getPrimary()}" class="collapse navbar-collapse position-relative" style="white-space: nowrap;">
       <ul th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" class="position-absolute navbar-nav me-auto mb-2 mb-lg-0 end-0">
         <li th:each="menuItem : ${menu.menuItems}"
-          th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-item' : 'nav-item dropdown'">
-          <a th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-link' : 'nav-link dropdown-toggle'" style="margin-top: -1px; margin-right: 55px; font-size: 14px; font-weight: bold;"
-            th:href="${#lists.isEmpty(menuItem.children)} ? @{${menuItem.status.href}} : '#'" th:text="${menuItem.status.displayName}"
+          th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-item' : 'nav-item dropdown'"> 
+          <a th:class="${#lists.isEmpty(menuItem.children)} ? 'nav-link' : 'nav-link dropdown-toggle'"
+            style="margin-top: -3px; margin-right: 20px; font-size: 14px; font-weight: bold;"
+            th:href="${#lists.isEmpty(menuItem.children)} ? @{${menuItem.status.href}} : '#'" 
+            th:text="${menuItem.status.displayName}" 
             th:target="${menuItem.spec.target?.value}">
           </a>
           <ul th:if="${not #lists.isEmpty(menuItem.children)}" th:class="dropdown-menu">
             <li th:each="childMenuItem : ${menuItem.children}">
-              <a th:class="dropdown-item" th:href="@{${childMenuItem.status.href}}" style="font-size: 14px; font-weight: bold;"
-                th:text="${childMenuItem.status.displayName}" th:target="${childMenuItem.spec.target?.value}"></a>
+              <a th:class="dropdown-item" 
+                 th:href="@{${childMenuItem.status.href}}" 
+                 style="font-size: 14px; font-weight: bold;"
+                 th:text="${childMenuItem.status.displayName}" 
+                 th:target="${childMenuItem.spec.target?.value}"></a>
             </li>
           </ul>
         </li>

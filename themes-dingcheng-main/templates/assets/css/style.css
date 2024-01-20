@@ -19,6 +19,12 @@ h1 {
   right: 33.33% !important; /* In RTL reading modes (like Arabic) */
 }
 
+.start-30 {
+  left: 30.8% !important;  /* In LTR reading modes (like English) */
+  right: 34% !important; /* In RTL reading modes (like Arabic) */
+}
+
+
 .start-27 {
   left: 27.33% !important;  /* In LTR reading modes (like English) */
   right: 33.33% !important; /* In RTL reading modes (like Arabic) */
@@ -41,6 +47,7 @@ h1 {
 }
 
 .btn-blue-custom {
+  margin-top: 30%;
   background-color: #0055A8; /* Replace with your desired color */
   color: #FFFFFF; /* Replace with your desired text color */
 }
@@ -196,4 +203,18 @@ h1 {
   border-right: 0;
   border-bottom: 0.3em solid transparent;
   border-left: 0.3em solid;
+}
+
+.feet-ul-color {
+  color: #858585;
+}
+
+.feet-img {
+  border-style: dotted;
+  margin-left: 13px;
+  margin-top: -3.5%;
+}
+
+.dropdown-submenu {
+  position: relative;
 }

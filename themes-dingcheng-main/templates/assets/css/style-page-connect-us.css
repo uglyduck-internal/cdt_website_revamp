@@ -1,0 +1,121 @@
+
+/* connect us */
+.connect-background{
+    background-image: url('../images/bl.png');
+    background-color: #F6FBFF;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.connect-size{
+    height: 800px; 
+    background-color: #F6FBFF; 
+    margin-top:-16px; 
+    margin-bottom: -15px;
+}
+
+.connect-h1-pos{
+    margin-left: 15%;
+    margin-top: 4%;
+}
+
+.left-card-pos{
+    position: relative;
+    bottom: -60px;
+    margin-left: 15%;
+    margin-top: -3%;
+    width: 681px;
+    height: 572px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 28px 0px rgba(4,86,167,0.16);
+    border-radius: 0px 0px 0px 0px;
+    opacity: 1;
+}
+
+.left-custom-input{
+    border: none; 
+    border-bottom: 1px solid #0456A7;
+    width: 350px;
+}
+
+.left-label-size {
+    display: block; /* 让label元素以块级元素显示 */
+    height: 40px; /* 设置label元素的高度 */
+    margin-left:20px;
+}
+  
+.text-color{ 
+    color: #2A2A2A;
+}
+  
+.left-label-font{
+    font-family: 'OPPOSans-Medium', sans-serif;
+    font-weight: 500; 
+    text-align: left; 
+    vertical-align: top; 
+    opacity: 1;
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 37.5px;
+    margin: 14.5% 0;
+}
+  
+.right-label-size{
+    margin-left: 10px;
+    display: block;
+    height: 50px;
+}
+.right-label-font{
+    font-family: 'Microsoft YaHei-Regular', sans-serif;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top; 
+    opacity: 1;
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 37.5px;
+    margin: 14.5% 0;
+}
+
+.right-custom-input{
+    margin-top:30px;
+    border: none;
+    width: 100%; 
+    height: 240px;
+}
+
+.right-card-pos{
+    margin-top: -3%;
+    margin-right: 10%;
+    width: 711px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 0px 0px;
+    opacity: 1;
+    border-top: 1px solid #0456A7; 
+    border-bottom: 1px solid #0456A7;
+    border-right: 1px solid #0456A7;
+    box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, 1.4);
+    position: relative;
+    bottom: -87px;    
+}
+  
+.button-text-color{
+    color:#0456A7
+}
+
+.button-size{
+    width:219px;
+    height: 68px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #FFFFFF;
+    opacity: 1;
+    border: 1px solid #0456A7;
+    margin-bottom: 10px;
+}
+
+.p-pos{
+    text-align: center;
+    position: relative;
+    top: -20px;
+}
