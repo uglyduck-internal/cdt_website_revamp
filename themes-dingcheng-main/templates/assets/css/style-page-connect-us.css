@@ -39,6 +39,23 @@
     width: 350px;
 }
 
+.captcha-custom-input{
+    border: none; 
+    border-bottom: 1px solid #0456A7;
+    width: 150px;
+}
+
+.captcha-img-size{
+    width:250px;
+    border: 2px solid;
+    text-align: center;
+    height: 40px;
+    font-size: smaller;
+    margin-left: 5%;
+    cursor: pointer; /* 设置鼠标样式为手型，表示可点击 */
+    display: inline-block; /* 设置为行内块元素，使得边框和背景色的样式能够生效 */
+}
+
 .left-label-size {
     display: block; /* 让label元素以块级元素显示 */
     height: 40px; /* 设置label元素的高度 */

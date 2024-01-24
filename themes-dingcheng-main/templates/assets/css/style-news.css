@@ -71,10 +71,19 @@
     margin-right: 73px;
 }
   
-.news-container {
-    padding-left: 40px;
+.news-font-h1{
+    white-space: nowrap; 
+    letter-spacing: 5px; 
+    font-weight: bold; 
+    position: relative; 
+    left: 22.3% !important;
 }
-  
+
+.news-container {
+    padding-left: 14% !important;
+    margin-left: 0%;
+}
+ 
 .news-background {
     background-image: url('../images/bl.png');
     background-position: bottom;

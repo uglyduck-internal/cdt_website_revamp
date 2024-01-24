@@ -2,7 +2,7 @@
     <div class="text-center mb-4 mt-5"> <!-- 添加这个div，mb-4为下边距 -->
         <h1>产品中心</h1>
     </div>
-    <div> 
+    <div>
         <!-- 选项卡导航居中 -->
         <ul class="nav justify-content-center" id="productTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -100,29 +100,29 @@
             <div th:with="singlePage = ${singlePageFinder.getByName('997dc388-128a-44b0-a007-fdb21f6145df')}" 
                 class="image-container"
                 style="margin-right: 10px; background-color: #F6FBFF;;">
-                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                <a th:href="@{/about}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
                         alt="研发团队">
                     <div class="d-flex mt-2">
-                        <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
+                        <a th:href="@{/about}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
                     </div>
                 </a>
             </div>
             <div th:with="singlePage = ${singlePageFinder.getByName('bed676de-7851-4ac7-9f17-de2544bd31c9')}"
                 class="image-container"
                 style="margin-right: 10px; background-color: #F6FBFF;">
-                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                <a th:href="@{/about}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
                         alt="研发设备">
                         <div class="d-flex mt-2">
-                            <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
+                            <a th:href="@{/about}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
                         </div>
                     </a>
             </div>
             <div th:with="singlePage = ${singlePageFinder.getByName('fb405e59-fdaa-411c-b815-43c79708f011')}"
                 class="image-container">
-                <a th:href="${singlePage.status.permalink}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
+                <a th:href="@{/about}"><img th:src="${singlePage.spec.cover}" class="img-fluid"
                         alt="生产设施">
                         <div class="d-flex mt-2">
-                            <a th:href="@{/yan-fa-tuan-dui}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
+                            <a th:href="@{/about}" class="btn btn-white-team btn-white-team-pos more-button">MORE</a>
                         </div>
                     </a>
             </div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .success-message {
+            color: #28a745;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-message">
+        <p>您的留言提交时发送了一个错误: </p>
+        <p> {{message}} </p>
+        <p>感谢您提出的建议,请重新提交</p>
+        <p id="countdown">3秒后跳转到首页....</p>
+    </div>
+    
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        if (true) {
+            var countdown = 3;
+            function updateCountdown() {
+                countdownElement.innerText = countdown + '秒后跳转到首页....';
+            }
+            function countdownFunction() {
+                updateCountdown();
+                if (countdown === 0) {
+                    window.location.href = '/';
+                } else {
+                    countdown--;
+                    setTimeout(countdownFunction, 1000); // 每秒更新一次倒计时
+                }
+            }
+            // 启动倒计时
+            countdownFunction();
+        }
+    </script>
+</body>
+</html>

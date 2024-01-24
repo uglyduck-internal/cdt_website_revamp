@@ -1,41 +1,46 @@
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" th:with="posts = ${postFinder.listByTag(1,100,'tag-dfoHF')}">
+    <div class="carousel-indicators mb-5" 
+         th:style="'left:65%;width:' + ${posts.total * 21 + 70} + 'px'" >
+      <button class="carousel-control-prev index-button translate-middle-y"
+              type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+              style="top: 50%;">
+        <span class="carousel-control-prev-icon icon-size prev-icon-color" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      
+      <span th:each="post, stat : ${posts}">
+        <button type="button" style="width: 15px; height: 15px; border-radius: 50%;" data-bs-target="#carouselExampleIndicators" 
+          th:data-bs-slide-to="${stat.index}" 
+          th:class="${stat.first} ? active : ''"
+          th:aria-current="${stat.first} ? true : false" 
+          th:aria-label="Slide +${stat.index}">
+        </button>
+      </span>
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
+      <button class="carousel-control-next index-button translate-middle-y" 
+        type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+        style="top: 50%;">
+        <span class="carousel-control-next-icon icon-size next-icon-color" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
     </div>
-    <div class="carousel-inner" th:with="posts = ${postFinder.listByTag(1,100,'tag-dfoHF')}">
-      <div class="carousel-item active">
-        <img th:src="@{/assets/images/鼎力打造.png}" class="d-block w-100" alt="...">
-        <div class="carousel-caption top-50 start-30 translate-middle d-none d-md-block">
-          <div class="d-flex flex-column align-items-start">
-            <a href="#" class="btn btn-blue-custom btn-blue-lg" >MORE</a>
+    <div class="carousel-inner">
+      <span th:each="post, stat : ${posts}">
+        <div th:class="${stat.first} ? 'carousel-item active' : 'carousel-item'">
+          <img th:src="${post.spec.cover}" class="d-block w-100" alt="..."> 
+          <div class="carousel-caption top-50 start-30 translate-middle d-none d-md-block">
+            <div class="d-flex flex-column align-items-start">
+              <a href="#" class="btn btn-blue-custom btn-blue-lg" >MORE</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item" th:each="post : ${posts.items}">
-        <img th:src="${post.spec.cover}" class="d-block w-100" alt="..."> 
-        <div class="carousel-caption top-50 start-30 translate-middle d-none d-md-block">
-          <div class="d-flex flex-column align-items-start">
-            <a href="#" class="btn btn-blue-custom btn-blue-lg" >MORE</a>
-          </div>
-        </div>
-      </div>
+      </span>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
   <div class="position-relative">

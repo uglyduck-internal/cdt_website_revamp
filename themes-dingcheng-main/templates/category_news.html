@@ -6,9 +6,9 @@
   <th:block th:fragment="content">
     <div class="position-relative">
       <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="">
-      <div class="position-absolute bottom-0 translate-middle container" style="padding-left: 40px;">
+      <div class="bottom-0 translate-middle-y" style="padding-left: 13.5%;position: absolute;">
         <h1 class="text-dark">
-          <div class="d-inline-block" style="white-space: nowrap; letter-spacing: 5px; font-weight: bold; position: relative; left: 22.3% !important;">
+          <div class="d-inline-block">
             新闻中心 | NEWS
           </div>
         </h1>
@@ -47,7 +47,7 @@
         
         <div class="row">
             <div class="col-md-12" th:with="page = ${param.pageID != null && param.pageID.length > 0 ? param.pageID[0] : 1}">
-                <ul class="news-ul" th:with="posts = ${postFinder.listByCategory(page, 3, category.metadata.name)}">
+                <ul class="news-ul" th:with="posts = ${postFinder.listByCategory(page, 1000, category.metadata.name)}">
                     <li class="news-li" th:each="post : ${posts.items}">
                         <img th:src="@{/assets/images/竖线.png}" class="news-icon" alt="">
                         <div class="news-content">
@@ -58,7 +58,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="position-relative">
+                <!-- <div class="position-relative">
                     <div class="d-flex justify-content-start mt-3">
                       <span th:if="${#numbers.sequence(page,page)[0] > 1}">
                         <span th:with="previous = ${category.status.permalink + '?pageID=' + (#numbers.sequence(page,page)[0]-1)}">
@@ -78,7 +78,7 @@
                         <span class="iconfont icon-roundrightfill" style="font-size: 2rem;"></span>
                       </span>
                     </div>
-                </div>   
+                </div>    -->
             </div>
         </div>
       </div>

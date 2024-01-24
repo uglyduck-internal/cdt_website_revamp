@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, flash, redirect, render_template
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -41,10 +41,10 @@ def send_mail():
         print(text)
         server.sendmail(DEFAULT_SENDER, DEFAULT_RECEIVER, text)
         server.quit()
-        return jsonify({'message': 'Email sent successfully!'}), 200
+        return render_template('success.html')
+
     except smtplib.SMTPException as e:
-        return jsonify({'error': str(e)}), 500
+         return render_template('error.html', message=str(e))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-

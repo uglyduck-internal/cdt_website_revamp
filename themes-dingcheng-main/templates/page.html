@@ -6,16 +6,15 @@
   <th:block th:fragment="content">
     <div class="position-relative">
       <img th:src="@{/assets/images/cpxq.png}" class="img-fluid" alt="">
-      <div class="position-absolute bottom-0 container translate-middle" style="padding-left: 40px;">
+      <div class="bottom-0 translate-middle-y" style="padding-left: 13.5%;position: absolute;">
         <h1 class="text-dark">
           <div 
-          class="d-inline-block" 
-          style="white-space: nowrap; letter-spacing: 5px; font-weight: bold; position: relative; left: 22.6% !important;"
+          class="d-inline-block"
           th:text="${singlePage.spec.excerpt.raw}">
           </div>
         </h1>
       </div>
     </div>
-    <article th:utext="${singlePage.content.content}"></article>
+    <article style="margin-bottom: -16px;" th:utext="${singlePage.content.content}"></article>
   </th:block>
 </html>
